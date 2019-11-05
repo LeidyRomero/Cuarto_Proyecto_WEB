@@ -1,0 +1,38 @@
+
+  .link {
+    transition: 0.4s;
+    color: black;
+    background-color: rgb(252, 252, 252);
+    font-size: 32px;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .link:hover {
+    background-color: #cf2323b6;
+    color: white;
+    padding: 11px 10px;
+  }
+  .space {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  #card-title {
+    font-size: 32px;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+  }
+  #card-sub-title {
+    font-size: 20px;
+    color: rgb(32, 32, 59);
+    text-decoration: none;
+    text-align: left;
+  }
+  #card-sub-title2 {
+    font-size: 20px;
+    color: rgb(32, 32, 59);
+    text-decoration: none;
+    text-align: right;
+  }

@@ -1,0 +1,64 @@
+#card-data {
+    font-size: 68px;
+    margin: 2px 40px 0 60px;
+    font-weight: 600;
+  }
+
+.data-card {
+    background-color: rgb(252, 252, 252);
+    border-radius: 6px;
+    color: black;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+    padding: 25px 10px;
+  }
+  .dashboard-background2 {
+    background-color: #5555;
+    padding: 0 40px;
+    overflow-y: auto+30px;
+    height: 100%;
+  }
+  .link {
+    transition: 0.4s;
+    color: black;
+    background-color: rgb(252, 252, 252);
+    font-size: 32px;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .link:hover {
+    background-color: #cf2323b6;
+    color: white;
+    padding: 11px 10px;
+  }
+  .space {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .space2 {
+    margin-top: 15px;
+    background-color: #5555;
+    margin-bottom: 15px;
+  }
+  #card-title {
+    font-size: 32px;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+  }
+  #card-sub-title {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+  }
+  .card-deck2 {
+    display: flex;
+    font-size: 24px;
+    justify-content: space-around;
+  }
