@@ -6,14 +6,14 @@ class Car extends Component {
     {
         return(
             <div className="card space link">
-                <h5 className="card-title">${this.props.obj.price}</h5>
+                <h1 className="card-title">${this.props.obj.price}</h1>
                 <img className="card-img-top" width="50" height="200" src={`${this.props.obj.image}`} alt="Card image cap"></img>
                <div className="row">
                     <div className="col-6">
-                        <h6 className="card-sub-title">Modelo: {this.props.obj.model}</h6>
+                        <p className="card-sub-title">Modelo: {this.props.obj.model}</p>
                     </div>
                     <div className="col-6">
-                        <h6 className="card-sub-title">Tipo: {this.props.obj.category}</h6>   
+                        <p className="card-sub-title">Tipo: {this.props.obj.category}</p>   
                     </div>
                </div>
             </div>

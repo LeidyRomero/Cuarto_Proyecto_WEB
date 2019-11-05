@@ -32,24 +32,24 @@ class CarDetail extends Component {
                     <div className="col-md-3">
                         <div className="card-deck2">
                             <div className="data-card">
-                                <h5>Precio: {this.state.datos[0].price}</h5>
-                                <h5>Año: {this.state.datos[0].year}</h5>
-                                <h5>Kilometros recorridos: {this.state.datos[0].km}</h5>
-                                <h5>Categoria: {this.state.datos[0].category}</h5>
-                                <h5>Color: {this.state.datos[0].color}</h5>
-                                <h5>Placa: {this.state.datos[0].license}</h5>
+                                <p>Precio: {this.state.datos[0].price}</p>
+                                <p>Año: {this.state.datos[0].year}</p>
+                                <p>Kilometros recorridos: {this.state.datos[0].km}</p>
+                                <p>Categoria: {this.state.datos[0].category}</p>
+                                <p>Color: {this.state.datos[0].color}</p>
+                                <p>Placa: {this.state.datos[0].license}</p>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-3">
                         <div className="card-deck2">
                             <div className="data-card">
-                                <h5>Marca: {this.state.datos[0].brand}</h5>
-                                <h5>Cilindraje (cm): {this.state.datos[0].centcubs}</h5>
-                                <h5>Cilindraje: {this.state.datos[0].cil_capacity}</h5>
-                                <h5>Número de puertas: {this.state.datos[0].doors}</h5>
-                                <h5>Transmision: {this.state.datos[0].transmission}</h5>
-                                <h5>Modelo: {this.state.datos[0].model}</h5>
+                                <p>Marca: {this.state.datos[0].brand}</p>
+                                <p>Cilindraje (cm): {this.state.datos[0].centcubs}</p>
+                                <p>Cilindraje: {this.state.datos[0].cil_capacity}</p>
+                                <p>Número de puertas: {this.state.datos[0].doors}</p>
+                                <p>Transmision: {this.state.datos[0].transmission}</p>
+                                <p>Modelo: {this.state.datos[0].model}</p>
                             </div>
                         </div>
                     </div>
