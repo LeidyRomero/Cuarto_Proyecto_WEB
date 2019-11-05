@@ -82,6 +82,14 @@ class Register extends React.Component {
                         required/></label>
                     </div>
                     <div className="form-group">
+                    <label>Telefono: <input
+                        type="number"
+                        id="register-telefono"
+                        className="form-control input-lg"
+                        placeholder="telefono"
+                        required/></label>
+                    </div>
+                    <div className="form-group">
                     <label>Correo electronico: <input
                         type="email"
                         id="register-email"
