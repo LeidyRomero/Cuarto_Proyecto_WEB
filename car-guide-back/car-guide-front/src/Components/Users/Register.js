@@ -84,7 +84,7 @@ class Register extends React.Component {
                     <div className="form-group">
                     <label>Telefono: <input
                         type="number"
-                        id="register-telefono"
+                        id="register-phone"
                         className="form-control input-lg"
                         placeholder="telefono"
                         required/></label>
