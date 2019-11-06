@@ -5,35 +5,39 @@ class Comparator extends Component {
     {
         super(props);
         this.state= { 
-            carros:[],
+            opcion:"",
+            datos:[],
           };
         
         this.renderComparator = this.renderComparator.bind(this);
     }
+    changeState(event){
+        this.setState({opcion:event.target.value});
+    };
     componentDidMount(){
         fetch(
-            "/cars" 
+            "/comparison/" 
          ).then((response)=>{return response.json();
          }).then(data=>{
-         this.setState({carros:data});
+         this.setState({datos:data});
        })
     }
-
     renderComparator() {
-        if (this.state.carros.length > 0) 
+        if (this.state.datos.length > 0) 
         {
             return (
+                <div className="row">
                 <div className="row">
                     <div className = "column-md-3 background-menu">
                         <p><b>COMPARAR VEHICULOS</b></p>
                         <button type="submit" className="btn btn-danger">GUARDAR COMPARACION</button>
 
-                        <p>CATEGORIA</p>
-                        <p>MODELO</p>
-                        <p>MARCA</p>
-                        <p>AÑO</p>
+                        <button onClick={this.changeState} value ="CATEGORIA">CATEGORIA</button>
+                        <button onClick={this.changeState} value ="MODELO">MODELO</button>
+                        <button onClick={this.changeState} value ="MARCA">MARCA</button>
+                        <button onClick={this.changeState} value ="AÑO">AÑO</button>
                     </div>
-
+                </div>
                     <div className = "column-md-9">
                     <div className="row justify-content-center">
                         <div className = "column-md-6">
