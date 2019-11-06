@@ -16,15 +16,13 @@ class Comparator extends Component {
     };
     componentDidMount(){
         fetch(
-            "/comparison/" 
+            "/comparisons/" 
          ).then((response)=>{return response.json();
          }).then(data=>{
          this.setState({datos:data});
        })
     }
     renderComparator() {
-        if (this.state.datos.length > 0) 
-        {
             return (
                 <div className="row">
                 <div className="row">
@@ -38,26 +36,28 @@ class Comparator extends Component {
                         <button onClick={this.changeState} value ="AÑO">AÑO</button>
                     </div>
                 </div>
-                    <div className = "column-md-9">
-                    <div className="row justify-content-center">
-                        <div className = "column-md-6">
-                            <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                            </select>
+            {this.state.datos.length>0 ? 
+               <div className = "column-md-9">
+               <div className="row justify-content-center">
+                   <div className = "column-md-6">
+                       <select>
+                           <option value="volvo">Volvo</option>
+                           <option value="saab">Saab</option>
+                       </select>
 
-                        </div> 
-                        <div className = "column-md-6">
-                            <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                            </select>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                   </div> 
+                   <div className = "column-md-6">
+                       <select>
+                           <option value="volvo">Volvo</option>
+                           <option value="saab">Saab</option>
+                       </select>
+                   </div>
+                   </div>
+               </div>
+               :
+                 null}
+            </div>
             ) 
-        }
     }
     render()
     {
