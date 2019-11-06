@@ -10,6 +10,7 @@ import UsersList from './Components/Users/usersList';
 import CarForm from './Components/Cars/carForm';
 import Login from './Components/Users/Login';
 import Register from './Components/Users/Register.js';
+import Comparator from './Components/Comparator/Comparator.js';
 
 export default class app extends Component {
  
@@ -30,6 +31,7 @@ export default class app extends Component {
           <Route path="/services" component={ServicesList} exact/>
           <Route path="/users" component={UsersList} exact/>
           <Route path="/car" component={CarForm} exact/>
+          <Route path="/comparator" component={Comparator} exact/>
         </BrowserRouter>
         <div id="footer">
           <Footer />

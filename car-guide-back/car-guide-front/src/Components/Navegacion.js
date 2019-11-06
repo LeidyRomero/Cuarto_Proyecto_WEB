@@ -32,6 +32,8 @@ class Navegacion extends Component {
                   </NavLink>
                   <NavLink to="/car" className=" nav-item nav-link link-3" id="btn-add">ADMIN
                   </NavLink>
+                  <NavLink to="/comparator" className=" nav-item nav-link link-3" id="btn-compare">COMPARAR
+                  </NavLink>
                   <NavLink to="/login" className=" nav-item nav-link link-4" id="btn-registerlogin">LOGIN
                   </NavLink>
                   </div>
