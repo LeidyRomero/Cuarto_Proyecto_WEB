@@ -7,40 +7,28 @@ class Navegacion extends Component {
     super(props);
     this.state = { 
       pagActual:'Inicio',
-    };
-
-    
+    }; 
   }
-  
   render(){
       return(
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark " role="navigation">
-      <div className="row align-items-md-center">
-        <div className="col-md-3">
+      <nav className="navbar" role="navigation">
           <img src="logo.png" alt="nav-logo" id="nav-logo"/>
-        </div>
-            <div className="col-md-9">
-              <div className="collapse navbar-collapse" id="navbarCollapse">
-                  <div className="navbar-nav ml-auto">
-                  <NavLink to="/" className="nav-item nav-link link-3" id="btn-inicio">INICIO
+              <div className="nav-links">
+                  <NavLink to="/" className="nav-link" id="btn-inicio">INICIO
                   </NavLink>
-                  <NavLink to="/cars" className="nav-item nav-link link-3" id="btn-cars">VENTAS
+                  <NavLink to="/cars" className="nav-link" id="btn-cars">VENTAS
                   </NavLink>
-                  <NavLink to="/services" className=" nav-item nav-link link-3" id="btn-services">SERVICIOS
+                  <NavLink to="/services" className="nav-link" id="btn-services">SERVICIOS
                   </NavLink>
-                  <NavLink to="/users" className=" nav-item nav-link link-3" id="btn-users">USUARIOS
+                  <NavLink to="/users" className="nav-link" id="btn-users">USUARIOS
                   </NavLink>
-                  <NavLink to="/car" className=" nav-item nav-link link-3" id="btn-add">ADMIN
+                  <NavLink to="/car" className="nav-link" id="btn-add">ADMIN
                   </NavLink>
-                  <NavLink to="/comparator" className=" nav-item nav-link link-3" id="btn-compare">COMPARAR
+                  <NavLink to="/comparator" className="nav-link" id="btn-compare">COMPARAR
                   </NavLink>
-                  <NavLink to="/login" className=" nav-item nav-link link-4" id="btn-registerlogin">LOGIN
+                  <NavLink to="/login"> <button className="nav-btn-login">LOGIN</button>
                   </NavLink>
                   </div>
-              </div>
-            </div>
-          </div>
-
       </nav>
       );
     }

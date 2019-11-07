@@ -20,7 +20,7 @@
   .dashboard-background2 {
     background-color: #5555;
     padding: 0 40px;
-    overflow-y: auto+30px;
+    /* overflow-y: auto+30px; */
     height: 100%;
   }
   #card-title {
@@ -59,4 +59,8 @@
   }
   .pink{
       color: rgb(185, 69, 69);
+  }
+
+  .row.dashboard-background2{
+    margin: 0;
   }

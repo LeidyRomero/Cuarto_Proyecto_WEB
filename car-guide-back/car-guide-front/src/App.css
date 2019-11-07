@@ -26,25 +26,55 @@
   margin-left: 5px;
 }
 
-.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  align-items: stretch;
+
   background: linear-gradient(
     180deg,
     rgba(39, 39, 39, 0.5976) 0%,
     rgba(29, 29, 29, 0.83) 100%
   );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
+  padding: 0 60px;
 }
 
-#btn-login{
+.nav-links {
+  display: flex;
+  align-items: baseline;
+}
+
+.nav-link {
+  color: white; 
+  height: 100%;
+  padding-top: 38px;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+}
+
+.nav-link:hover{
+  color: white;
+  background-color: #CB2E2D;
+}
+
+.nav-btn-login {
   padding: 10px 40px;
   font-weight: 800;
   font-size: 16px;
+  background-color: #CB2E2D;
+  color: white;
+  border: none;
+  margin-left: 20px;
 }
 
-#nav-logo{
+#nav-logo {
   width: 150px;
 }
 
