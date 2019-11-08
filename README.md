@@ -4,6 +4,7 @@
 Una aplicación para publicar carros en venta, así como conectar a empresas que ofrecen servicios de mantenimiento automovilistico con los clientes de la aplicación.<br>
 
 <h4>Otras propuestas:</h4>
+
 - TuCarro: Aplicación para publicar carros en venta.
 
 - Otras aplicaciones de venta de autos.
