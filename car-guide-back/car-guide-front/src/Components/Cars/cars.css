@@ -121,6 +121,11 @@
   background-color: #cb2e2d;
 }
 
+.card.sale:hover .sale-price {
+  background-color: white;
+  color: #cb2e2d;
+}
+
 .card.sale:hover .sale-info {
   background-color: #cb2e2d;
 }
