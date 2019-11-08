@@ -1,4 +1,8 @@
 # Proyecto 4 - The car guide
+
+# Video
+<a href="https://uniandes-my.sharepoint.com/:v:/g/personal/pa_suarezm_uniandes_edu_co/EYFbGy1Iaa1PpYAHcRYBkY8B5mKOJLGNOBpcxWI9UkClJQ?e=VTKdHw">En esta ubicación</a> se puede encontrar un video mostrando la funcionalidad de la aplicación web propuesta. Es necesario un usuario uniandes para acceder a dicha ubicación.
+
 # Descripción
 <h4>Solución:</h4>
 Una aplicación para publicar carros en venta, así como conectar a empresas que ofrecen servicios de mantenimiento automovilistico con los clientes de la aplicación.<br>
