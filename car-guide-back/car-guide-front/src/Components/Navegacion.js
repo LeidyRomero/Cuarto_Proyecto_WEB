@@ -12,7 +12,7 @@ class Navegacion extends Component {
   render(){
       return(
       <nav className="navbar" role="navigation">
-          <img src="logo.png" alt="nav-logo" id="nav-logo"/>
+           <NavLink to="/"><img src="logo.png" alt="nav-logo" id="nav-logo"/></NavLink>
               <div className="nav-links">
                   <NavLink to="/" className="nav-link" id="btn-inicio">INICIO
                   </NavLink>

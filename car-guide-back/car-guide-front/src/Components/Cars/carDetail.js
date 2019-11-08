@@ -23,7 +23,7 @@ class CarDetail extends Component {
         if (this.state.datos.length > 0) 
         {
         return (
-            <div>
+            <div  id="car-detail">
                 <h1>{this.state.datos[0].name}</h1>
                 <div className="row align-items-md-center">
                     <div className="col-md-6">

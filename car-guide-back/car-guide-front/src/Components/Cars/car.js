@@ -19,9 +19,15 @@ class Car extends Component {
           <p className="sale-price">{this.props.obj.price}</p>
         </div>
         <div className="sale-info">
-        <p id="sale-info-text"><span id="info-span">Marca:</span> {this.props.obj.brand}</p>
-            <p id="sale-info-text"><span id="info-span">Año:</span> {this.props.obj.year}</p>
-            <p id="sale-info-text"><span id="info-span">Kilometraje:</span> {this.props.obj.km}</p>
+          <p id="sale-info-text">
+            <span id="info-span">Marca:</span> {this.props.obj.brand}
+          </p>
+          <p id="sale-info-text">
+            <span id="info-span">Año:</span> {this.props.obj.year}
+          </p>
+          <p id="sale-info-text">
+            <span id="info-span">Kilometraje:</span> {this.props.obj.km}
+          </p>
         </div>
       </div>
     );
