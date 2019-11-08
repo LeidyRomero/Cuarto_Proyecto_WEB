@@ -6,17 +6,6 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #09d3ac;
 }
@@ -35,8 +24,8 @@
 
   background: linear-gradient(
     180deg,
-    rgba(39, 39, 39, 0.5976) 0%,
-    rgba(29, 29, 29, 0.83) 100%
+    rgba(72, 77, 81, 0.7553) 0%,
+    rgba(26, 28, 30, 0.83) 100%
   );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 
@@ -52,30 +41,39 @@
 }
 
 .nav-link {
-  color: white; 
+  color: white;
   height: 100%;
   padding-top: 38px;
   transition-timing-function: ease-in-out;
   transition: 0.4s;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: white;
-  background-color: #CB2E2D;
+  background-color: #cb2e2d;
 }
 
 .nav-btn-login {
   padding: 10px 40px;
   font-weight: 800;
   font-size: 16px;
-  background-color: #CB2E2D;
+  background-color: #cb2e2d;
+  border-radius: 3px;
   color: white;
   border: none;
   margin-left: 20px;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+}
+
+.nav-btn-login:hover {
+  background-color: white;
+  color: #cb2e2d;
 }
 
 #nav-logo {
-  width: 150px;
+  width: 130px;
+  padding: 10px 0;
 }
 
 #logo {
@@ -83,6 +81,6 @@
   padding: 15px;
 }
 
-body {
+* {
   font-family: "Open sans", "sans-serif";
 }
