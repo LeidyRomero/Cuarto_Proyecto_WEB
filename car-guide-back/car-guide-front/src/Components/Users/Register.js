@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Container, Col, Row, Image } from "react-bootstrap";
 import { post } from 'axios';
 
@@ -7,7 +7,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      redirectToReferrer: false,
       error: false,
     };
 
@@ -15,6 +15,11 @@ class Register extends React.Component {
   }
 
   handleSubmit(e) {
+
+    this.setState({
+        redirectToReferrer: true
+    })
+
     e.preventDefault();
     let username = document.getElementById("register-username").value;
     let name = document.getElementById("register-name").value;
@@ -33,6 +38,11 @@ class Register extends React.Component {
 
   render() {
     const { error } = this.state;
+    
+    const redirectToReferrer = this.state.redirectToReferrer;
+    if (redirectToReferrer === true) {
+        return <Redirect to="/" />
+    }
 
     return (
         <div>
@@ -82,19 +92,19 @@ class Register extends React.Component {
                         required/></label>
                     </div>
                     <div className="form-group">
-                    <label>Telefono: <input
-                        type="number"
-                        id="register-phone"
-                        className="form-control input-lg"
-                        placeholder="telefono"
-                        required/></label>
-                    </div>
-                    <div className="form-group">
                     <label>Correo electronico: <input
                         type="email"
                         id="register-email"
                         className="form-control input-lg"
                         placeholder="email"
+                        required /></label>
+                    </div>
+                    <div className="form-group">
+                    <label>Celular: <input
+                        type="number"
+                        id="register-phone"
+                        className="form-control input-lg"
+                        value="3021230548"
                         required /></label>
                     </div>
                     <div className="form-group">
@@ -123,8 +133,8 @@ class Register extends React.Component {
                     </div>
                     <div className="form-group text-center">
                       <p className="text-center">
-                        ¿No tienes una cuenta? Regístrate{" "}
-                        <Link to="/signup">aquí</Link>
+                        ¿Ya tienes una cuenta? Ingresa{" "}
+                        <Link to="/login">aquí</Link>
                       </p>
                     </div>
                   </form>
