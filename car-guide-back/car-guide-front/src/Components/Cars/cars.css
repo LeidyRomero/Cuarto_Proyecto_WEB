@@ -174,3 +174,44 @@
 #detail-span {
   color: rgb(139, 139, 139);
 }
+
+.card.form{
+  background-color: #272e36;
+  color: white;
+  padding: 20px 0 20px 60px;
+}
+
+#wrap-form-title {
+  background: rgba(38, 38, 38, 0.7);
+  border-radius: 8px;
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  margin-left: 60px;
+  padding: 10px 35px;
+}
+
+#form-title {
+  font-weight: 800;
+  color: white;
+}
+
+#mandatory-form{
+  color: rgb(139, 139, 139);
+  font-size: 1.1em;
+}
+
+.btn-form{
+  background-color: #cb2e2d;
+  font-weight: bold;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.4s;
+}
+
+.btn-form:hover{
+  color: #cb2e2d;
+  background-color: white;
+}
