@@ -144,6 +144,29 @@
   object-fit: cover;
 }
 
-#car-detail{
-  margin-top: 300px;
+#car-detail {
+  margin: 180px 0 0 60px;
+}
+
+.car-detail-background {
+  background-color: #272e36;
+  height: 90vh;
+  width: 100%;
+}
+
+.card-img-top.space2 {
+  object-fit: cover;
+}
+
+#car-detail-title {
+  color: white;
+  font-weight: 700;
+}
+
+.data-card {
+  color: white;
+}
+
+#detail-span {
+  color: rgb(139, 139, 139);
 }
