@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import "./cars.css";
+import "../../App.css";
+
 class CarDetail extends Component {
     
     constructor(props)
@@ -23,11 +25,11 @@ class CarDetail extends Component {
         if (this.state.datos.length > 0) 
         {
         return (
-            <div>
+            <div className="top_spaced">
                 <h1>{this.state.datos[0].name}</h1>
                 <div className="row align-items-md-center">
                     <div className="col-md-6">
-                    <img className="card-img-top space2" width="100" height="300" src={`${this.state.datos[0].image}`} alt="Card image cap"></img>
+                    <img className="card-img-top space2" width="100" height="300" src={`${this.state.datos[0].image}`} alt="Card cap"></img>
                     </div>
                     <div className="col-md-3">
                         <div className="card-deck2">

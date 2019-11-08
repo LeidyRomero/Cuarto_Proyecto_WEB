@@ -1,14 +1,17 @@
 import React from 'react';
-import { Grid, Form, Header, Message } from 'semantic-ui-react';
-import { Link } from "react-router-dom";
-import { Container, Col, Row, Image } from "react-bootstrap";
-import store from 'store';
+import { Link, Redirect } from "react-router-dom";
+import { post } from 'axios';
+import App from '../../App';
+import { isUndefined } from 'util';
+
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      redirectToReferrer: false,
+      user: null,
       error: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,75 +19,72 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
     let email = document.getElementById("login-email").value;
     let password = document.getElementById("login-password").value;
+
+    var user = {email, password};
+
+    post('/users/login', user)
+    .then((res) => {
+      this.setState({
+        redirectToReferrer: true,
+        user: res.data.user
+      })
+
+      this.props.changeState(this.state.user.username, this.state.user.role);
+
+    })
+    .catch((error) =>{
+      console.log(error);
+    });
     
+
   }
 
   render() {
-    const { error } = this.state;
+
+    const redirectToReferrer = this.state.redirectToReferrer;
+    if (redirectToReferrer === true) {
+      return <Redirect to="/" />
+    }
 
     return (
-        <div>
-        <Container>
-          <Row>
-            <Col lg="4" md="4" sm="12">
-              
-            </Col>
-            <Col lg="4" md="4" sm="12">
-              <div className="login-wrap">
-                <h1 className="text-center">Ingresar</h1>
-                <div className="modal-body">
-                  {error.length > 0 ? (
-                    <div className="alert alert-danger fade in">{error}</div>
-                  ) : (
-                    ""
-                  )}
-                  <form
-                    id="login-form"
-                    className="form col-md-12 center-block"
-                    onSubmit={this.handleSubmit}
-                  >
-                    <div className="form-group">
-                      <label>Correo electronico: <input
-                        type="email"
-                        id="login-email"
-                        className="form-control input-lg"
-                        placeholder="email"
-                        required/></label>
-                    </div>
-                    <div className="form-group">
-                      <label>Contraseña: <input
-                        type="password"
-                        id="login-password"
-                        className="form-control input-lg"
-                        placeholder="password"
-                      required/></label>
-                    </div>
-                    <div className="form-group text-center">
-                      <input
-                        type="submit"
-                        id="login-button"
-                        className="btn btn-primary btn-lg btn-block"
-                        value="Ingresar"
-                      />
-                    </div>
-                    <div className="form-group text-center">
-                      <p className="text-center">
+      
+        <div className="top_spaced">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div className="card card-signin my-5">
+                  <div className="card-body">
+                    <h5 className="card-title text-center">Ingresa</h5>
+                    <form className="form-signin"  onSubmit={this.handleSubmit}>
+                      <div className="form-label-group">
+                        <input type="email" id="login-email" className="form-control" placeholder="Email" required autoFocus/>
+                      </div>
+                      <div className="form-label-group">
+                        <input type="password" id="login-password" className="form-control" placeholder="Contraseña" required autoFocus></input>
+                      </div>
+                      <div className="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1"></input>
+                        <label className="custom-control-label" htmlFor="customCheck1">Recordarme</label>
+                      </div>
+                      <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ingresar</button>
+                      <br></br>
+                      <small className="text-center">
                         ¿No tienes una cuenta? Regístrate{" "}
                         <Link to="/signup">aquí</Link>
-                      </p>
-                    </div>
-                  </form>
+                      </small>
+                      <hr className="my-4"></hr>
+                      <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i className="fab fa-google mr-2"></i> Ingresa con Google</button>
+                      <button className="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i className="fab fa-facebook-f mr-2"></i> Ingresa con Facebook</button>                   
+                    </form>
+                  </div>
                 </div>
               </div>
-            </Col>
-            <Col lg="4" md="4" sm="12">
-              
-            </Col>
-          </Row>
-        </Container>
-      </div>
+            </div>
+          </div>
+        </div>
     );
   }
 }

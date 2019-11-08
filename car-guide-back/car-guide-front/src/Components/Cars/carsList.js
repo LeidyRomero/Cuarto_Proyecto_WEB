@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./cars.css";
+import "../../App.css";
 import { Link } from "react-router-dom";
 import Car from "./car";
 class CarsList extends Component {
@@ -32,7 +33,7 @@ class CarsList extends Component {
     render()
     {
         return(
-            <div className="card-deck2 dashboard-background2">
+            <div className="card-deck2 dashboard-background2 top_spaced">
                     <div className="container-fluid">
                         
                         <div className="row">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Redirect } from "react-router-dom";
-import { Container, Col, Row, Image } from "react-bootstrap";
 import { post } from 'axios';
 
 class Register extends React.Component {
@@ -8,6 +7,7 @@ class Register extends React.Component {
     super(props);
     this.state = {
       redirectToReferrer: false,
+      user: null,
       error: false,
     };
 
@@ -15,10 +15,6 @@ class Register extends React.Component {
   }
 
   handleSubmit(e) {
-
-    this.setState({
-        redirectToReferrer: true
-    })
 
     e.preventDefault();
     let username = document.getElementById("register-username").value;
@@ -30,14 +26,23 @@ class Register extends React.Component {
     let role = document.getElementById("register-role").value;
     var user = {username, name, age, email, phone, password, role };
 
-    post('/users/signin', user)
-      .then(() => {
-        console.log('added:', user);
-      });
+    post('/users/signup', user)
+    .then((res) => {
+      this.setState({
+        redirectToReferrer: true,
+        user: res.data.user
+      })
+
+      this.props.changeState(this.state.user.username, this.state.user.role);
+
+    })
+    .catch((error) =>{
+      console.log(error);
+    });
+    
   }
 
   render() {
-    const { error } = this.state;
     
     const redirectToReferrer = this.state.redirectToReferrer;
     if (redirectToReferrer === true) {
@@ -45,104 +50,101 @@ class Register extends React.Component {
     }
 
     return (
-        <div>
-        <Container>
-          <Row>
-            <Col lg="6" md="6">
-            <div className="logo-wrap">
-                <img id="logo" src="Signin.jpg" alt="imagen registro" />
+      <div className="top_spaced">
+        <div className="container">
+          <div className="row justify-content-center">
+          <div className="col-md-6">
+              <div className="logo-wrap">
+                <img id="logo" src="Signin.jpg" />
               </div>
-            </Col>
-            <Col lg="6" md="6">
-              <div className="register-wrap">
-                <h1 className="text-center">Registrarse</h1>
-                <div className="modal-body">
-                  {error.length > 0 ? (
-                    <div className="alert alert-danger fade in">{error}</div>
-                  ) : (
-                    ""
-                  )}
-                  <form
-                    id="register-form"
-                    className="form col-md-12 center-block"
-                    onSubmit={this.handleSubmit}
-                  >
-                    <div className="form-group">
-                      <label>Nombre de usuario: <input
-                        type="text"
-                        id="register-username"
-                        className="form-control input-lg"
-                        placeholder="usuario"
-                        required/></label>
-                    </div>
-                    <div className="form-group">
-                    <label>Nombres y apellidos: <input
-                        type="text"
-                        id="register-name"
-                        className="form-control input-lg"
-                        placeholder="nombres y apellidos"
-                        required /></label>
-                    </div>
-                    <div className="form-group">
-                    <label>Edad: <input
-                        type="number"
-                        id="register-age"
-                        className="form-control input-lg"
-                        placeholder="edad"
-                        required/></label>
-                    </div>
-                    <div className="form-group">
-                    <label>Correo electronico: <input
-                        type="email"
-                        id="register-email"
-                        className="form-control input-lg"
-                        placeholder="email"
-                        required /></label>
-                    </div>
-                    <div className="form-group">
-                    <label>Celular: <input
-                        type="number"
-                        id="register-phone"
-                        className="form-control input-lg"
-                        value="3021230548"
-                        required /></label>
-                    </div>
-                    <div className="form-group">
-                    <label>Contraseña: <input
-                        type="password"
-                        id="register-password"
-                        className="form-control input-lg"
-                        placeholder="password"
-                        required /></label>
-                    </div>
-                    <div className="form-group">
-                    <label><input
-                        type="hidden"
-                        id="register-role"
-                        className="form-control input-lg"
-                        value="User"
-                        /></label>
-                    </div>
-                    <div className="form-group text-center">
-                    <label><input
-                        type="submit"
-                        id="register-button"
-                        className="btn btn-primary btn-lg btn-block"
-                        value="Registar"
-                      /></label>
-                    </div>
-                    <div className="form-group text-center">
-                      <p className="text-center">
-                        ¿Ya tienes una cuenta? Ingresa{" "}
-                        <Link to="/login">aquí</Link>
-                      </p>
-                    </div>
-                  </form>
+          </div>
+            <div className="col-md-6">
+              <div className="card card-signin my-5">
+                <div className="card-header text-center">REGISTRO</div>
+                    <div className="card-body">
+                      <form className="form-horizontal form-signin" id="register-form"  onSubmit={this.handleSubmit}>
+                          <div className="form-group">
+                              <label htmlFor="name" className="cols-sm-2 control-label">Nombre</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="text" className="form-control" name="name" id="register-name" placeholder="Pepito Perez" required/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <label htmlFor="email" className="cols-sm-2 control-label">Email</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="text" className="form-control" name="email" id="register-email" placeholder="Email" required/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <label htmlFor="username" className="cols-sm-2 control-label">Usuario</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="text" className="form-control" name="username" id="register-username" placeholder="PepPerez" required/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <label htmlFor="username" className="cols-sm-2 control-label">Edad</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="number" className="form-control" name="age" id="register-age" placeholder="22" required autoFocus/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <label htmlFor="username" className="cols-sm-2 control-label">Teléfono</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="number" className="form-control" name="phone" id="register-phone" placeholder="3022285078" autoFocus/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <label htmlFor="password" className="cols-sm-2 control-label">Contraseña</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="password" className="form-control" name="password" id="register-password" placeholder="Contraseña" required autoFocus/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <label htmlFor="confirm" className="cols-sm-2 control-label">Confirma la contraseña</label>
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                      <span className="input-group-addon"></span>
+                                      <input type="password" className="form-control" name="confirm" id="register-confirm" placeholder="Confirma tu contraseña" required autoFocus/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="form-group">
+                              <div className="cols-sm-10">
+                                  <div className="input-group">
+                                  <input type="hidden" className="form-control input-lg" id="register-role" name="role"  value="User"/>                                  </div>
+                              </div>
+                          </div>
+                          <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarse</button>
+                          <div className="login-register">
+                            <small className="text-center">
+                              ¿Ya tienes una cuenta? Ingresa{" "}
+                              <Link to="/login">aquí</Link>
+                            </small>                        
+                          </div>
+                      </form>
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

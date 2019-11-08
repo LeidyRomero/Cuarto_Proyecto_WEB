@@ -35,10 +35,13 @@
     background-color: #cf2323b6;
     color: white;
     padding: 11px 10px;
+    text-decoration: none;
   }
   .space {
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration: none;
+
   }
   .space2 {
     margin-top: 15px;
