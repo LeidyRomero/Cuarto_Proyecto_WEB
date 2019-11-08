@@ -16,7 +16,7 @@ class Car extends Component {
             <h1 className="sale-category">{this.props.obj.category}</h1>
             <p className="sale-model">{this.props.obj.name}</p>
           </div>
-          <p className="sale-price">{this.props.obj.price}</p>
+          <p className="sale-price">$ {this.props.obj.price}</p>
         </div>
         <div className="sale-info">
           <p id="sale-info-text">

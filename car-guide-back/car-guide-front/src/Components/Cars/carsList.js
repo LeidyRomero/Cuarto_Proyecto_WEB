@@ -37,9 +37,9 @@ class CarsList extends Component {
           <img
             src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
             id="sales-image"
+            alt="Ventas"
           />
         <div id="wrap-sales-title">
-          
           <h1 id="sales-title">Ventas</h1>
         </div>
         <div className="car-list">{this.renderCars()}</div>
