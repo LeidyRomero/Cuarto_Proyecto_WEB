@@ -18,8 +18,8 @@ Dueños de autos de Colombia, interesados en venta y/o mantenimiento de automovi
 <h4>Instrucciones de descarga y despliegue:</h4>
 <ol>
   <li>Clonar el repositorio <a href="https://github.com/isis3710-uniandes/Team04-Entrega4">aqui</a></li>
-  <li>Instalar dependencias ejecutando en consola y/o terminal el comando npm install en los directorios car-guide-back y car-guide-front ubicados en TheCarGuide y TheCarGuide/car-guide-back respectivamente</li>
-  <li>Ejecutar el proyecto ejecutando el comando "npm start" en ambas terminales y/o consolas de comandos</li>
+  <li>Instalar dependencias ejecutando en consola y/o terminal el comando "npm install" en los directorios car-guide-back y car-guide-front ubicados en TheCarGuide y TheCarGuide/car-guide-back respectivamente</li>
+  <li>Ejecutar el proyecto ejecutando el comando "npm start" en ambas terminales (una sobre TheCarGuide/car-guide-back y otra sobre TheCarGuide/car-guide-front)</li>
   <li>Abrir en un navegador la dirección localhost:3000</li>
 </ol>
 
