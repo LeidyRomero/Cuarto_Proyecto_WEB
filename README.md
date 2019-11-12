@@ -140,7 +140,7 @@ No hay cambios de contexto automaticos en el formulario para agregar un auto.
   - El código fuente está debidamente marcado para mejorar compatibilidad con dispositivos de asistencia
 
 # Test de usabilidad: carpeta con los videos de los test
-https://drive.google.com/drive/folders/10_5gpfQ8vlrfxvNSgTnJKBkQmwl5uycQ?usp=sharing
+https://drive.google.com/drive/folders/1LG08ZEBjTBJZo6V1Z53uS6SIBzQw1kg0?usp=sharing
 
 # Otros
 <h4>Licencia:</h4>
