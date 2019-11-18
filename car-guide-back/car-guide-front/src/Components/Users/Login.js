@@ -50,7 +50,6 @@ class Login extends React.Component {
     }
 
     return (
-      
         <div className="top_spaced">
           <div className="container">
             <div className="row">

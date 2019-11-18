@@ -1,66 +1,85 @@
-#card-data {
-    font-size: 1px;
-    margin: 2px 40px 0 60px;
-  }
-  
-.data-card {
-    background-color: rgb(252, 252, 252);
-    border-radius: 6px;
-    margin-top: 18px;
-    margin-bottom: 20px;
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
-    padding: 25px 10px;
-  }
-  .space {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .dashboard-background2 {
-    background-color: #5555;
-    padding: 0 40px;
-    /* overflow-y: auto+30px; */
-    height: 100%;
-  }
-  #card-title {
-    font-size: 30px;
-    text-align: center;
-  }
-  #card-sub-title2 {
-    font-size: 12px;
-    text-align: center;
-  }
-  .card-deck2 {
-    display: flex;
-    font-size: 24px;
-    justify-content: space-around;
-  }
-  .align {
-    text-align: center;
-    background-color:rgb(41, 46, 51);
-    color:white;
-    margin: 0%;
-  }
-  .container2 {
-    position: relative;
-    font-family: Arial;
-  }
-  
-  .text-block {
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
-    width: 25%;
-    background-color: rgba(49, 48, 48, 0.829);
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .pink{
-      color: rgb(185, 69, 69);
-  }
+.trending {
+  background-color: #272E36;
+  box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.25);
+  padding: 20px 40px;
+  /* overflow-y: auto+30px; */
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
 
-  .row.dashboard-background2{
-    margin: 0;
-  }
+.align {
+  text-align: center;
+  background-color: #272E36;
+  color: white;
+  padding: 30px 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.home-box {
+  position: relative;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 30%;
+  right: 65%;
+  width: 30%;
+  color: white;
+  padding: 15px 30px;
+  background: rgba(38, 38, 38, 0.7);
+  border-radius: 8px;
+}
+
+#box-title {
+  font-weight: 700;
+  font-size: 2.3em;
+  margin-bottom: 15px;
+}
+
+#box-text {
+  font-size: 0.9em;
+}
+
+.red {
+  color: #cb2e2d;
+}
+
+.branding{
+  background-color: rgb(205, 207, 209);
+  padding: 40px 0;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.branding-title{
+  color: white;
+  font-weight: 700;
+  padding: 10px 0 25px 0;
+  font-size: 25px;
+  background-color: #272E36;
+  box-shadow: 0px 4px 4px rgba(99, 71, 71, 0.089);
+  text-align: center;
+}
+
+#branding-text{
+  margin: 0;
+}
+
+.info{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 50px;
+  align-items: baseline;
+}
+
+.brand-image{
+  height: 120px;
+  margin: 0 50px; 
+}
+
+
+

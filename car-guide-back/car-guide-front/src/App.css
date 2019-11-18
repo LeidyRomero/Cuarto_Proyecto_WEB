@@ -6,17 +6,6 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #09d3ac;
 }
@@ -35,8 +24,8 @@
 
   background: linear-gradient(
     180deg,
-    rgba(39, 39, 39, 0.5976) 0%,
-    rgba(29, 29, 29, 0.83) 100%
+    rgba(72, 77, 81, 0.7553) 0%,
+    rgba(26, 28, 30, 0.83) 100%
   );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 
@@ -52,26 +41,34 @@
 }
 
 .nav-link {
-  color: white; 
+  color: white;
   height: 100%;
   padding-top: 38px;
   transition-timing-function: ease-in-out;
   transition: 0.4s;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: white;
-  background-color: #CB2E2D;
+  background-color: #cb2e2d;
 }
 
 .nav-btn-login {
   padding: 10px 40px;
   font-weight: 800;
   font-size: 16px;
-  background-color: #CB2E2D;
+  background-color: #cb2e2d;
+  border-radius: 3px;
   color: white;
   border: none;
   margin-left: 20px;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+}
+
+.nav-btn-login:hover {
+  background-color: white;
+  color: #cb2e2d;
 }
 
 .nav-btn-logout {
@@ -100,7 +97,8 @@
 }
 
 #nav-logo {
-  width: 150px;
+  width: 130px;
+  padding: 10px 0;
 }
 
 #user_tag{
@@ -248,4 +246,61 @@ body {
   .form-label-group input:-ms-input-placeholder {
     color: #777;
   }
+}
+
+.login-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-background{
+  background-image: url("https://images.unsplash.com/photo-1551651742-93408a326c25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80");
+  height: 89vh;
+  background-size: cover;
+}
+
+.login-form-button{
+  background-color: #cb2e2d;
+  color: white;
+  font-weight: bold;
+  font-size:1.1em;
+  padding: 10px 80px;
+  border-radius: 3px;
+  border: none;
+  transition: 0.4s;
+}
+
+.login-form-button:hover{
+  color:#cb2e2d;
+  background-color:white;
+}
+
+.login-wrap {
+  background: rgba(38, 38, 38, 0.8);
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px 35px;
+  margin-top: 45%;
+  color: white;
+  text-align: center;
+}
+
+.login-title {
+  margin-top: 15px;
+  font-weight: 800;
+  color: white;
+}
+
+#login-password, #login-email{
+  margin-top: 15px;
+}
+
+#form-link{
+  color:#cf2323b6;
+  font-weight: bold;
+}
+
+#form-link:hover{
+  color:white;
+  text-decoration: none;
 }

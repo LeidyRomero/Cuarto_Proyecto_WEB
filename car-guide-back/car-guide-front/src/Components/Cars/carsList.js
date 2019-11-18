@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./cars.css";
 import "../../App.css";
 import { Link } from "react-router-dom";
@@ -6,48 +6,46 @@ import Car from "./car";
 class CarsList extends Component {
   constructor(props) {
     super(props);
-    this.state= { 
-        carros:[],
-      };
-      this.renderCars= this.renderCars.bind(this);
-    }
-    componentDidMount(){
-        fetch(
-           "/cars" 
-        ).then((response)=>{return response.json();
-        }).then(data=>{
-        this.setState({carros:data});
+    this.state = {
+      carros: []
+    };
+    this.renderCars = this.renderCars.bind(this);
+  }
+  componentDidMount() {
+    fetch("/cars")
+      .then(response => {
+        return response.json();
       })
-    }
+      .then(data => {
+        this.setState({ carros: data });
+      });
+  }
 
-    renderCars() {
-        if (this.state.carros.length > 0) 
-        {
-        return this.state.carros.map(
-            (car,i) => <div className="col-md-4"><Link to={`/cars/${car.license}`}>
-                <Car obj={car} key={i}/>
-            </Link> </div>
-        )
-        }
+  renderCars() {
+    if (this.state.carros.length > 0) {
+      return this.state.carros.map((car, i) => (
+        <div className="col-md-4">
+          <Link to={`/cars/${car.license}`}>
+            <Car obj={car} key={i} />
+          </Link>{" "}
+        </div>
+      ));
     }
-    render()
-    {
-        return(
-            <div className="card-deck2 dashboard-background2 top_spaced">
-                    <div className="container-fluid">
-                        
-                        <div className="row">
-                            <div className="col-12 text-center">
-                                <h1>Ventas</h1>
-                            </div>
-                        </div>
-                        <div className="row">
-                            {this.renderCars()}
-                        </div>
-                    </div>
-            </div>
-        )
-    }
-
+  }
+  render() {
+    return (
+      <div className="sales">
+          <img
+            src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+            id="sales-image"
+            alt="Ventas"
+          />
+        <div id="wrap-sales-title">
+          <h1 id="sales-title">Ventas</h1>
+        </div>
+        <div className="car-list">{this.renderCars()}</div>
+      </div>
+    );
+  }
 }
 export default CarsList;
